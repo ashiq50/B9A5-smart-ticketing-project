@@ -92,7 +92,7 @@
                 </div>
                 
             </div>
-            <div class="flex justify-center mt-10">
+            <div class="flex justify-center mt-14">
                 <button class="btn text-[#1DD100]">See All Offers</button>
             </div>
         </section>
@@ -102,16 +102,16 @@
                 <h2 class="text-4xl font-extrabold mb-3">P.H Paribahan</h2>
                 <p>Yes, you can run unit tests and view the results directly within the app. The integrated <br> testing features allow for a streamlined .</p>
             </div>
-            <div class="container flex flex-col lg:flex-row justify-between mt-10">
+            <div class="container flex flex-col gap-5 lg:flex-row justify-between mt-10">
                 <!-- 1st -->
-                <div class="w-[70%] shadow-2xl">
-                    <div class="flex justify-between items-center">
+                <div class="lg:w-[70%] w-auto shadow-2xl rounded-xl">
+                    <div class="flex justify-between items-center p-7">
                         <div class="flex items-center gap-4">
                             <div>
                                 <img class="w-[60px]" src="./images/bus-logo.png" alt="">
                             </div>
                             <div>
-                                <h3 class="text-3xl font-bold mb-3">Greenline Paribahan</h3>
+                                <h3 class="text-xl lg:text-3xl font-bold mb-3">Greenline Paribahan</h3>
                                 <p>Coach-009-WEB ! AC_Business</p>
                             </div>
                         </div>
@@ -142,10 +142,97 @@
                    </div>
                 </div>
                 <!-- 2nd -->
-                <div class="shadow-2xl flex flex-col justify-center items-center p-3 lg:p-24 rounded-lg">
+                <div class="shadow-2xl w-auto lg:w-[30%] flex flex-col justify-center items-center p-7 lg:p-24 rounded-lg space-y-3">
                     <img src="./images/fare.png" alt="">
                     <h3 class="text-xl font-semibold"><span>550</span> Taka</h3>
                     <p>Per Seat</p>
+                </div>
+            </div>
+        </section>
+        <!-- Ticket section -->
+        <section class="container mx-auto py-8 lg:px-20 px-8 mt-20">
+            <div class="flex flex-col lg:flex-row justify-between gap-20 p-5 shadow-2xl rounded-xl">
+                <div class="lg:w-[60%] w-auto">
+                    <h3 class="mb-4">Select Your Seat</h3>
+                    <hr class="border-dotted">
+                    <div class="flex justify-between items-center mt-4">
+                        <div class="flex items-center gap-2 ">
+                            <img src="./images/seat-gray.png" alt="">
+                            <p>Available</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img src="./images/seat-green-filled.png" alt="">
+                            <p class="text-[#1DD100]">Selected</p>
+                        </div>
+                    </div>
+                    <hr class="border-dotted mt-4">
+                    <div class="flex justify-end mt-4">
+                        <img class="bg-gray-200 px-6 py-3 rounded-lg" src="./images/vector.png" alt="">
+                    </div>
+                    <!-- seats -->
+                    <div class="flex justify-between mt-20">
+                        <div class="flex gap-16  items-center">
+                            <div class="flex flex-col space-y-28">
+                                <h4>A</h4>
+                                <h4>B</h4>
+                            </div>
+                            <div class="grid grid-cols-2 gap-28">
+                                <button class="common-seats btn">A1</button>
+                                <button class="common-seats btn">A2</button>
+                                <button class="common-seats btn">B1</button>
+                                <button class="common-seats btn">B2</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-28">
+                            <button class="common-seats btn">A3</button>
+                            <button class="common-seats btn">A4</button>
+                            <button class="common-seats btn">B3</button>
+                            <button class="common-seats btn">B4</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-[40%] w-auto">
+                    <h3>Select Your Seat</h3>
+                    <hr class="border-dotted mt-5">
+                    <div class="flex justify-between mt-10">
+                        <p>Seat</p>
+                        <p>Class</p>
+                        <p>Price</p>
+                    </div>
+                    <hr class="border-dotted mt-4">
+                    <!-- Append Container -->
+                    <div class="append-container">
+                        
+                    </div>
+                    <hr class="border-dotted">
+                    <div class="flex justify-between">
+                        <p>Total Price</p>
+                        <p>BDT <span id="total-price"></span></p>
+                    </div>
+                    <div class="input-with-button mt-5 relative inline-block w-full">
+                        <input type="text" id="inputField" class="pr-10 pl-3 py-1 w-full" placeholder="Have any coupon?">
+                        <button id="applyButton" class="bg-[#1DD100] text-white px-4 py-1 rounded-md absolute top-0 right-0">Apply</button>
+                      </div>
+                      <div class="flex justify-between items-center mt-5">
+                        <h4>Grand Total</h4>
+                        <p>BDT <span id="grand-total"></span></p>
+                      </div>
+                      <div class="space-y-5 mt-5">
+                          <div>
+                            <h4>Passenger Name*</h4>
+                            <input class="w-full px-3 py-2" type="text" placeholder="Enter Your Name">
+                          </div>
+                          <div>
+                            <h4>Phone Number*</h4>
+                            <input class="w-full px-3 py-2" type="number" name="" id="" placeholder="Enter Your Phone Number">
+                          </div>
+                          <div>
+                            <h4>Email ID</h4>
+                            <input class="w-full px-3 py-2 " type="email" name="" id="" placeholder="Enter Your Email">
+                          </div>
+                          <button class="bg-[#1DD100] w-full px-6 py-3 rounded-lg text-white">Next</button>
+                      </div>
                 </div>
             </div>
         </section>
