@@ -57,16 +57,15 @@ const total = parseInt(totalCost);
 const final = total + parseInt(ticketPrice);
 document.getElementById('total-price').innerText = final;
 
+// coupon discount
+
 // grandTotal count:
 const grandTotal = document.getElementById('grand-total').innerText;
 const grandPrice = parseInt(grandTotal);
 const grand = grandPrice + parseInt(ticketPrice);
 document.getElementById('grand-total').innerText = grand;
-    
     })
 }
-
-
 
 const btn = document.getElementById('applyButton');
 btn.addEventListener('click', function (){
@@ -78,20 +77,8 @@ btn.addEventListener('click', function (){
     else{
         alert('put the right coupon code here')
     }
-
-    // if(couponElement === 'NEW15'){
-    //     parseInt(ticketPrice)*0.15
-    //     applyContainer.classList.add('hidden')
-    // }
-    // else if(couponElement === 'Couple 20'){
-    //     parseInt(ticketPrice)*20;
-    //     applyContainer.classList.add('hidden')
-    // }
-    // else{
-    //     alert('put the right coupon code here')
-    // }
-
 })
+
 
 
 
