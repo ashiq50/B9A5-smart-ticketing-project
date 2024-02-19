@@ -12,6 +12,19 @@
     <!-- Tailwind and DaisyUi link here -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- modal -->
+<input type="checkbox" id="my_modal_6" class="modal-toggle" />
+<div class="modal" role="dialog">
+  <div class="modal-box flex flex-col justify-center items-center space-y-2">
+    <img src="./images/success.png" alt="">
+    <h3 class="font-bold text-lg">success</h3>
+    <p class="py-4">Thank you for booking our bus seats.We are working hard to find the best service and deals for you.</p>
+    <p>Shortly you'll find a confirmation in your email.</p>
+    <div class="modal-action w-3/4 flex justify-center">
+      <label for="my_modal_6" class="btn w-3/4 bg-green-500">Continue</label>
+    </div>
+  </div>
+</div>
 </head>
 <body>
     <header>
@@ -56,7 +69,7 @@
                   <div class="max-w-md flex flex-col justify-center items-center">
                     <h1 class="mb-5 text-xl lg:text-5xl font-bold lg:w-[550px] text-white">End-to-End Travel with <br> <span class="text-[#1DD112]">P Paribahan</span></h1>
                     <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
-                    <button class="btn bg-[#1DD112] text-xl font-bold">Buy Tickets</button>
+                    <a class="bg-[#1DD100] px-3 py-2 rounded-md" href="#buy-ticket">Buy Tickets</a>
                   </div>
                 </div>
               </div>
@@ -74,19 +87,19 @@
                         <p>Use by January 2024</p>
                     </div>
                     <div class="space-y-2">
-                        <h3 class="text-2xl font-bold">NEW15</h3>
+                        <h3 id="new15" class="text-2xl font-bold">NEW15</h3>
                         <p>Coupon Code</p>
                     </div>
                 </div>
                 <!-- coupon 02 -->
                 <div class="bg-[#F78C9C] gap-3 lg:gap-10  rounded-3xl px-8 py-12 flex  items-center w-auto justify-between lg:w-[600px]">
                     <div class="space-y-2">
-                        <h3 class="text-3xl font-bold">15% OFF</h3>
+                        <h3 class="text-3xl font-bold">20% OFF</h3>
                         <p class="text-lg font-medium">On your next purchase</p>
                         <p>Use by January 2024</p>
                     </div>
                     <div class="space-y-2">
-                        <h3 class="text-2xl font-bold">Couple 20</h3>
+                        <h3 id="couple20" class="text-2xl font-bold">Couple 20</h3>
                         <p>Coupon Code</p>
                     </div>
                 </div>
@@ -97,7 +110,7 @@
             </div>
         </section>
         <!-- PH Paribahan -->
-        <section class="container mx-auto py-8 lg:px-20 px-8 mt-20">
+        <section id="buy-ticket" class="container mx-auto py-8 lg:px-20 px-8 mt-20">
             <div class="text-center">
                 <h2 class="text-4xl font-extrabold mb-3">P.H Paribahan</h2>
                 <p>Yes, you can run unit tests and view the results directly within the app. The integrated <br> testing features allow for a streamlined .</p>
@@ -118,7 +131,7 @@
                         <div class="flex mr-3">
                             <button class="btn flex justify-between items-center space-x-1 text-[#1DD100] px-3  rounded-md text-center">
                                 <img src="./images/seat-green.png" alt="">
-                                <span>40</span>
+                                <span id="seat sales">8</span>
                                 <span>Seats left</span>
                             </button>
                         </div>
@@ -144,7 +157,7 @@
                 <!-- 2nd -->
                 <div class="shadow-2xl w-auto lg:w-[30%] flex flex-col justify-center items-center p-7 lg:p-24 rounded-lg space-y-3">
                     <img src="./images/fare.png" alt="">
-                    <h3 class="text-xl font-semibold"><span>550</span> Taka</h3>
+                    <h3 class="text-xl font-semibold"><span id="ticket-price">550</span> Taka</h3>
                     <p>Per Seat</p>
                 </div>
             </div>
@@ -196,46 +209,50 @@
                     <h3>Select Your Seat</h3>
                     <hr class="border-dotted mt-5">
                     <div class="flex justify-between mt-10">
-                        <p>Seat</p>
+                        <p>Seat<span id="seat-add" class="bg-[#1DD100] px-1 py-0.5 rounded"></span></p>
                         <p>Class</p>
                         <p>Price</p>
                     </div>
                     <hr class="border-dotted mt-4">
                     <!-- Append Container -->
-                    <div class="append-container">
-                        
-                    </div>
+                    <ul id="append-container">
+
+                    </ul>
                     <hr class="border-dotted">
                     <div class="flex justify-between">
                         <p>Total Price</p>
-                        <p>BDT <span id="total-price"></span></p>
+                        <p>BDT <span id="total-price">0</span></p>
                     </div>
-                    <div class="input-with-button mt-5 relative inline-block w-full">
+                    <div id="apply-container" class="input-with-button mt-5 relative inline-block w-full">
                         <input type="text" id="inputField" class="pr-10 pl-3 py-1 w-full" placeholder="Have any coupon?">
-                        <button id="applyButton" class="bg-[#1DD100] text-white px-4 py-1 rounded-md absolute top-0 right-0">Apply</button>
+                        <button onclick="couponId()" id="applyButton" class="bg-[#1DD100] text-white px-4 py-1 rounded-md absolute top-0 right-0">Apply</button>
                       </div>
                       <div class="flex justify-between items-center mt-5">
                         <h4>Grand Total</h4>
-                        <p>BDT <span id="grand-total"></span></p>
+                        <p>BDT <span id="grand-total">0</span></p>
                       </div>
-                      <div class="space-y-5 mt-5">
+                      <div id="validate-container" class="space-y-5 mt-5">
                           <div>
                             <h4>Passenger Name*</h4>
-                            <input class="w-full px-3 py-2" type="text" placeholder="Enter Your Name">
+                            <input id="text" class="w-full px-3 py-2" type="text" placeholder="Enter Your Name">
+                            
                           </div>
                           <div>
                             <h4>Phone Number*</h4>
-                            <input class="w-full px-3 py-2" type="number" name="" id="" placeholder="Enter Your Phone Number">
+                            <input class="w-full px-3 py-2" type="number" name="" id="number" placeholder="Enter Your Phone Number" required>
                           </div>
                           <div>
                             <h4>Email ID</h4>
-                            <input class="w-full px-3 py-2 " type="email" name="" id="" placeholder="Enter Your Email">
+                            <input class="w-full px-3 py-2 " type="email" name="" id="email" placeholder="Enter Your Email" required>
                           </div>
-                          <button class="bg-[#1DD100] w-full px-6 py-3 rounded-lg text-white">Next</button>
+                          <label for="my_modal_6" class="btn bg-[#1DD100] w-full px-6 py-3 rounded-lg text-white">Next</label>
                       </div>
                 </div>
             </div>
+            
         </section>
+
     </main>
+    <script src="js/script.js"></script>
 </body>
 </html>
